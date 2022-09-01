@@ -215,25 +215,43 @@ a:focus {
 }
 
 .offering {
+    position: relative;
     font-size: 11px;
     letter-spacing: 0.2px;
     color: $gray;
     line-height: 123.34%;
     margin-top: 12px;
-    position: relative;
+    overflow: hidden;
+    max-height: 126px;
 
-    div {
-        position: absolute;
-        height: 44px;
-        width: 100%
+    
+    &__text {
+        overflow-y: scroll;
+        max-height: 126px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+        .offering__scroll {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
     }
 
     .top {
+        position: absolute;
+        height: 44px;
+        width: 100%;
         top: 0;
         background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
     }
 
     .bottom {
+        position: absolute;
+        height: 44px;
+        width: 100%;
         bottom: 0;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
     }
@@ -320,9 +338,11 @@ a:focus {
     color: #777777;
     margin-top: auto;
 }
-.hide{
+
+.hide {
     display: none;
-    + .inner-2{
+
+    +.inner-2 {
         opacity: 1;
         z-index: 1;
     }
